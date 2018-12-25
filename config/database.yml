@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: asagao_development
+  database: sauna_development
 
 test:
   <<: *default
-  database: asagao_test
+  database: sauna_test
 
 production:
   <<: *default
-  database: asagao_production
+  database: sauna_production
