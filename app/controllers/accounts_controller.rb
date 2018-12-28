@@ -15,6 +15,6 @@ class AccountsController < ApplicationController
       redirect_to :account, notice: "アカウント情報を更新しました。"
     else
       render "edit"
-    end 
+    end
   end
 end
