@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'entry_images/index'
+  get 'entry_images/new'
+  get 'entry_images/edit'
   root "top#index"
   get "about" => "top#about", as: "about"
 
@@ -12,5 +15,9 @@ Rails.application.routes.draw do
   resource :password, only: [:show, :edit, :update]
 
   resources :articles
-  resources :entries
+  resources :entries do
+    resources :images, controller: "entry_images" do
+      patch :move_igher, :move_lower, on: :member
+    end
+  end
 end
