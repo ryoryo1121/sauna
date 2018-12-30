@@ -10,7 +10,7 @@ class AccountsController < ApplicationController
 
   def update
     @member = current_member
-    @member.assign_attributes(accout_params)
+    @member.assign_attributes(account_params)
     if @member.save
       redirect_to :account, notice: "アカウント情報を更新しました。"
     else
@@ -21,6 +21,8 @@ class AccountsController < ApplicationController
   # ストロングパラメーター
   private def account_params
     params.require(:account).permit(
+      :new_profile_picture,
+      :remove_profile_picture,
       :number,
       :name,
       :full_name,
