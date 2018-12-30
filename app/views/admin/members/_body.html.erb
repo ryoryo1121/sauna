@@ -1,12 +1,12 @@
-<% @page_title = "会員の詳細" %>
-
-<h1><%= @page_title %></h1>
-
-
-
-<%= render "body" %>
-
 <table class="attr">
+  <tr>
+    <th>プロフィール画像</th>
+    <td>
+      <% if @member.profile_picture.attached? %>
+        <%= image_tag @member.profile_picture.variant(resize: "128x128") %>
+      <% end %>
+    </td>
+  </tr>
   <tr>
     <th width="150">背番号</th>
     <td><%= @member.number %></td>
