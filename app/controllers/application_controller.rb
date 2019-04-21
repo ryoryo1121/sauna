@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
   end
 
   private def rescue_internal_server_error(exception)
-    render "errors/internal_server_error", status: 500, layout: "error",
-      formats: [:html]
+    # render "errors/internal_server_error", status: 500, layout: "error",
+    #   formats: [:html]
   end
 end
